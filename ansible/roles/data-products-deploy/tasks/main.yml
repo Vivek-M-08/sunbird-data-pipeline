@@ -290,20 +290,6 @@
     - spark1-jobs
     - default-jobs
 
-- name: Create daily cron jobs for survey-question-report
-  cron: name="{{env}}-{{ item.key }}" minute={{ item.value.minute }} hour={{ item.value.hour }}  job="{{ analytics.home }}/scripts/run-job.sh survey-question-report"
-  with_dict: "{{ run_survey_question_report_job }}"
-  tags:
-    - spark1-jobs
-    - default-jobs
-
-- name: Create daily cron jobs for survey-status-report
-  cron: name="{{env}}-{{ item.key }}" minute={{ item.value.minute }} hour={{ item.value.hour }}  job="{{ analytics.home }}/scripts/run-job.sh survey-status-report"
-  with_dict: "{{ run_survey_status_report_job }}"
-  tags:
-    - spark1-jobs
-    - default-jobs
-
 - name: Create monthly cron jobs for learner-leaderboard
   cron: name="{{env}}-{{ item.key }}" day={{ item.value.day }} minute={{ item.value.minute }} hour={{ item.value.hour }}  job="{{ analytics.home }}/scripts/run-job.sh learner-leaderboard"
   with_dict: "{{ run_learner_leaderboard_job }}"

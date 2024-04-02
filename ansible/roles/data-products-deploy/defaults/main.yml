@@ -68,11 +68,11 @@ dw_postgres_credential: "Password@12345678"
 
 
 mongo_node_bb_host: "{{groups['mongodb-nodebb'][0]}}"
-ml_mongo_host: "{{groups['ml-mongodb-host'][0]}}"
+
 dashboards_mongo_discussions_db: "nodebb"
 dashboards_mongo_discussions_db_collection: "objects"
-dashboards_mongo_survey_observation_db: "ml-survey"
-dashboards_mongo_survey_collection: "solutions"
+
+
 dashboards_platform_rating_survey_id: "{{ platform_rating_survey_id }}"
 
 dashboards_frac_backend_host: "frac-dictionary-backend.igot-{{ env }}.in"
@@ -99,14 +99,9 @@ acbp_report_path: "standalone-reports/cbp-report"
 acbp_mdo_enrolment_report_path: "standalone-reports/cbp-report-mdo-enrolment"
 acbp_mdo_summary_report_path: "standalone-reports/cbp-report-mdo-summary"
 kcm_report_path: "standalone-reports/kcm-report"
-ml_report_path: "standalone-reports/ml-report"
 
-report_solution_ids: ""
-report_grace_period: "2"
-report_base_url_for_evidences: "https://portal.karmayogi.nic.in/content-store/"
-report_survey_question_report_columns_config: '{"reportColumns":{"createdBy":"UUID","organisationName":"Organisation Name","organisationId":"Organisation Id","surveyName":"Survey Name","surveyId":"Survey Id","surveySubmissionId":"Survey Submission Id","questionExternalId":"Question External Id","questionName":"Question","questionResponseLabel":"Answer","evidences":"Evidences","remarks":"Remarks"},"userProfileColumns":{"maskedPhone":"Masked Phone","firstName":"First Name","profileDetails-academics-nameOfQualification":"Academics Qualification","profileDetails-academics-type":"Academics Type","last_login":"Last Login"},"sortingColumns":"UUID,First Name,Masked Phone,Organisation Name,Organisation Id,Survey Name,Survey Id,Survey Submission Id,Question External Id,Question,Answer,Evidences,Remarks,Academics Qualification,Academics Type,Last Login"}'
-report_survey_status_report_columns_config: '{"reportColumns":{"createdBy":"UUID","organisationName":"Organisation Name","surveyName":"Survey Name","surveyId":"Survey Id","surveySubmissionId":"Survey Submission Id"},"userProfileColumns":{"firstName":"First Name","lastName":"Last Name","identifier":"Identifier","last_login":"Last Login"},"sortingColumns":"UUID,First Name,Last Name,Identifier,Last Login,Organisation Name,Survey Name,Survey Id,Survey Submission Id, Status of Submission, Submission Date"}'
-report_include_expired_solution_ids: true
+
+
 
 comms_console_prarambh_email_suffix: ".kb@karmayogi.in"
 comms_console_num_days_to_consider: "15"
@@ -268,14 +263,7 @@ run_learner_leaderboard_job:
     day: 01
     hour: 09
     minute: 45
-run_survey_question_report_job:
-  survey-question-report:
-    hour: 11
-    minute: 00
-run_survey_status_report_job:
-  survey-status-report:
-    hour: 11
-    minute: 30
+
 run_monitor_job:
   monitor-job-summ:
     hour: 03
